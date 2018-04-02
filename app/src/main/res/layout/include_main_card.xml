@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_card"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_junk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_junk_whilte"
+        android:drawablePadding="15dp"
+        android:padding="20dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="垃圾清理"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normal_text_size" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="#19000000" />
+
+
+    <TextView
+        android:id="@+id/tv_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_photo_white_24dp"
+        android:drawablePadding="15dp"
+        android:padding="20dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="@string/titile_similar_photo"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normal_text_size" />
+
+
+</LinearLayout>
