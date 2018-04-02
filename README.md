@@ -19,6 +19,12 @@
 
 ### 注意事项
 
+### TODO
+
+ * 添加相似图片清理
+ * 添加内存加速
+ * 添加垃圾清理
+
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
