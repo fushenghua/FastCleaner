@@ -62,7 +62,6 @@ public class SimilarPhotoActivity extends AppCompatActivity implements View.OnCl
         mSimilarPhotosCleaner.setSimilarPhotoCallback(new SimilarPhotosCleaner.SimilarCallback() {
             @Override
             public void onFoundItem(int i, int count) {
-//                Log.d(SimilarPhotosCleaner.TAG, " i=" + i + "count=" + count);
                 mTvProgress.setText(String.format(getResources().getString(R.string.similar_photos_search_txt), i, count));
             }
 

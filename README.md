@@ -1,29 +1,64 @@
 # FastCleaner
 
 * Similar Photos in the Android
+* Junk Clean
 
-# FastCleaner
+![](https://raw.githubusercontent.com/fushenghua/FastCleaner/d6b3c6c1f813853e8ea576a5a1f4b9e5a62ef41f/img/fastcleanerPhone.png)
 
 #### 示例:
+
+![](https://raw.githubusercontent.com/fushenghua/FastCleaner/d6b3c6c1f813853e8ea576a5a1f4b9e5a62ef41f/img/fastcleaner.jpg)
 
 ### 特性
 
  * 相似图片清理
  * 垃圾清理
+ * 清晰图分析
  
 ### 原理说明
+
+
 
 ### 下载安装
 
 ### 使用方法
+
+
+```
+ private void initData() {
+        mSimilarPhotosCleaner = new SimilarPhotosCleaner();
+        mSimilarPhotosCleaner.setContext(this);
+        mSimilarPhotosCleaner.setSimilarPhotoCallback(new SimilarPhotosCleaner.SimilarCallback() {
+            @Override
+            public void onFoundItem(int i, int count) {
+                mTvProgress.setText(String.format(getResources().getString(R.string.similar_photos_search_txt), i, count));
+            }
+
+            @Override
+            public void onScanEnd(List<GroupData> result) {
+                Log.d(SimilarPhotosCleaner.TAG, " GroupDatas size" + result.size());
+
+                if (result.isEmpty()) {
+                    mTvProgress.setText("无相似图片");
+                    return;
+                }
+                mTvProgress.setVisibility(View.GONE);
+                setShowScanResult(result);
+            }
+        });
+        mSimilarPhotosCleaner.start();
+        mTvProgress.setVisibility(View.VISIBLE);
+    }
+```
 
 ### 注意事项
 
 ### TODO
 
  * [x]相似图片清理
- * 内存加速
- * 垃圾清理
+ * [ ] 清晰图识别
+ * [ ] 内存加速
+ * [ ] 垃圾清理
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -49,3 +84,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
