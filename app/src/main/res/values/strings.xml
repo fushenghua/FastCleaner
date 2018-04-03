@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">FastCleaner</string>
+    <string name="app_name">Fast Cleaner</string>
     <string name="titile_similar_photo">相似图片</string>
+    <string name="similar_photos_search_txt">查找%1$d/%2$d相似图片</string>
+    <string name="similar_photos_btn_delete">删除 %1$d 张图片</string>
 </resources>

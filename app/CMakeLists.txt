@@ -10,6 +10,8 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -fexceptions -frtti -lstdc++")
+
 add_library( # Sets the name of the library.
              native-lib
 
@@ -18,6 +20,11 @@ add_library( # Sets the name of the library.
 
              # Provides a relative path to your source file(s).
              src/main/cpp/native-lib.cpp )
+
+#add_library(libopencv_imgproc STATIC IMPORTED )
+#set_target_properties(libopencv_imgproc PROPERTIES
+#    IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libopencv_imgproc.a")
+
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by

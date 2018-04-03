@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--黑色背景颜色-->
+    <item android:drawable="@color/main_color" />
+    <!-- 产品logo-->
+    <!--<item>-->
+        <!--<bitmap-->
+            <!--android:gravity="center"-->
+            <!--android:src="@mipmap/ic_launcher" />-->
+    <!--</item>-->
+    <!-- 右上角的图标元素 -->
+    <!--最下面的文字-->
+    <!--<item android:bottom="50dp">-->
+        <!--<bitmap-->
+            <!--android:gravity="bottom"-->
+            <!--android:src="@mipmap/ic_launcher" />-->
+
+        <!--<Text-->
+    <!--</item>-->
+</layer-list>

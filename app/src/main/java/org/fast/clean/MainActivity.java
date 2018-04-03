@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import org.fast.clean.bean.SDCardInfo;
 import org.fast.clean.bean.StorageUtil;
+import org.fast.clean.similar.SimilarPhotoActivity;
 import org.fast.clean.utils.AppUtil;
 import org.fast.clean.view.circleprogress.ArcProgress;
 
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView mTvPhoto;
 
-    // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
     }
@@ -86,12 +86,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mArcStore.setProgress((int) percentStore);
 
     }
-
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
 
     @Override
     public void onClick(View v) {
