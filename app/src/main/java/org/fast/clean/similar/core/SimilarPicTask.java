@@ -62,7 +62,7 @@ public class SimilarPicTask extends AsyncTask<Void, Integer, List<GroupData>> {
 
         Cursor cursor = null;
         try {
-
+            ImageAlgorithm imgAlgorithm = mDiffpicWeak.get().getAlgorithm();
             Context mContext = mDiffpicWeak.get().getContext();
             if (mContext != null) {
                 String[] selectionArgs = new String[]{"image/jpeg", "image/png"};
@@ -90,6 +90,10 @@ public class SimilarPicTask extends AsyncTask<Void, Integer, List<GroupData>> {
                         photoFile.id = id;
                         photoFile.mSize = size;
                         photoFile.lastModified = lastModified;
+
+                        if (TextUtils.isEmpty(photoFile.hmValue)) {
+                            createFinger(photoFile, mContext, photoFile.id, imgAlgorithm);
+                        }
 
                         postItem(mPhotoFiles, photoFile, index++, count);
                     } while (cursor.moveToNext());
@@ -130,7 +134,7 @@ public class SimilarPicTask extends AsyncTask<Void, Integer, List<GroupData>> {
                 createFinger(currFile, mContext, currFile.id, imgAlgorithm);
             }
 
-            boolean featureDistance = imgAlgorithm.hasSimilar(pointFile.hmValue, currFile.hmValue);
+            boolean featureDistance = imgAlgorithm.hasSimilar(pointFile, currFile);
             Log.i(TAG, "featureDistance =" + featureDistance + "  " + currFile.filePath + " and " + pointFile.filePath);
             if (featureDistance) {
                 if (similarItem.indexOf(pointFile) < 0) {
@@ -156,7 +160,7 @@ public class SimilarPicTask extends AsyncTask<Void, Integer, List<GroupData>> {
     private void createFinger(PhotoData photoData, Context context, long id, ImageAlgorithm imgAlgorithm) {
         long start = System.currentTimeMillis();
         String finger = imgAlgorithm.createFinger(loadBitmap(context, photoData.id));
-        photoData.hmValue = finger;
+        photoData.setHmAvgValue(finger);
         Log.i(TAG, "cvtHash time=" + (System.currentTimeMillis() - start));
     }
 
