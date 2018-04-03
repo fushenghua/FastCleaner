@@ -24,7 +24,7 @@
 ### 使用方法
 
 
-```
+``` java
  private void initData() {
         mSimilarPhotosCleaner = new SimilarPhotosCleaner();
         mSimilarPhotosCleaner.setContext(this);
@@ -37,17 +37,9 @@
             @Override
             public void onScanEnd(List<GroupData> result) {
                 Log.d(SimilarPhotosCleaner.TAG, " GroupDatas size" + result.size());
-
-                if (result.isEmpty()) {
-                    mTvProgress.setText("无相似图片");
-                    return;
-                }
-                mTvProgress.setVisibility(View.GONE);
-                setShowScanResult(result);
             }
         });
         mSimilarPhotosCleaner.start();
-        mTvProgress.setVisibility(View.VISIBLE);
     }
 ```
 
@@ -63,6 +55,8 @@
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+
+```
 MIT License
 
 Copyright (c) 2017 fushenghua
@@ -84,5 +78,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
 
 
