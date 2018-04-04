@@ -3,7 +3,7 @@
 * Similar Photos in the Android
 * Junk Clean
 
-![](https://github.com/fushenghua/FastCleaner/raw/master/img/fastcleanerPhone.jpg)
+![](https://github.com/fushenghua/FastCleaner/raw/master/img/fastcleanerPhone.png)
 
 #### 示例:
 
