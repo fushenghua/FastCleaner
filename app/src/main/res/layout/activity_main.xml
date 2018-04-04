@@ -1,85 +1,146 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
-
-    <RelativeLayout
+    <!--主布局-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1.4">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="200dip"
-            android:layout_centerInParent="true">
-
-            <RelativeLayout
-                android:id="@+id/arc_left"
-                android:layout_width="wrap_content"
-                android:layout_height="200dip"
-                android:layout_centerVertical="true">
-
-                <org.fast.clean.view.circleprogress.ArcProgress
-                    android:id="@+id/arc_store"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    custom:arc_bottom_text="存储空间"
-                    custom:arc_bottom_text_size="18dip"
-                    custom:arc_progress="10"
-                    custom:arc_stroke_width="8dip"
-                    custom:arc_text_color="@color/text_color"
-                    custom:arc_text_size="42dip" />
-
-                <TextView
-                    android:id="@+id/capacity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="55dip"
-                    android:text="20/30"
-                    android:textColor="@color/text_color"
-                    android:textSize="12dip" />
-            </RelativeLayout>
-
-            <org.fast.clean.view.circleprogress.ArcProgress
-                android:id="@+id/arc_process"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="25dip"
-                android:layout_marginLeft="15dip"
-                android:layout_toRightOf="@+id/arc_left"
-                custom:arc_bottom_text="内存"
-                custom:arc_bottom_text_size="14dip"
-                custom:arc_progress="10"
-                custom:arc_stroke_width="6dip"
-                custom:arc_text_color="@color/text_color"
-                custom:arc_text_size="26dip" />
-        </RelativeLayout>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#3762ad"
-            android:visibility="gone">
+            android:layout_height="0dip"
+            android:layout_weight="1.4">
 
-            <TextView
+            <RelativeLayout
                 android:layout_width="wrap_content"
+                android:layout_height="200dip"
+                android:layout_centerInParent="true">
+
+                <RelativeLayout
+                    android:id="@+id/arc_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dip"
+                    android:layout_centerVertical="true">
+
+                    <org.fast.clean.view.circleprogress.ArcProgress
+                        android:id="@+id/arc_store"
+                        android:layout_width="180dp"
+                        android:layout_height="180dp"
+                        custom:arc_bottom_text="存储空间"
+                        custom:arc_bottom_text_size="18dip"
+                        custom:arc_progress="10"
+                        custom:arc_stroke_width="8dip"
+                        custom:arc_text_color="@color/text_color"
+                        custom:arc_text_size="42dip" />
+
+                    <TextView
+                        android:id="@+id/capacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="55dip"
+                        android:text="20/30"
+                        android:textColor="@color/text_color"
+                        android:textSize="12dip" />
+                </RelativeLayout>
+
+                <org.fast.clean.view.circleprogress.ArcProgress
+                    android:id="@+id/arc_process"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="25dip"
+                    android:layout_marginLeft="15dip"
+                    android:layout_toRightOf="@+id/arc_left"
+                    custom:arc_bottom_text="内存"
+                    custom:arc_bottom_text_size="14dip"
+                    custom:arc_progress="10"
+                    custom:arc_stroke_width="6dip"
+                    custom:arc_text_color="@color/text_color"
+                    custom:arc_text_size="26dip" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="dddd" />
+                android:layout_alignParentBottom="true"
+                android:background="#3762ad"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="dddd" />
+            </RelativeLayout>
         </RelativeLayout>
-    </RelativeLayout>
 
-    <include
-        layout="@layout/include_main_card"
+        <include
+            layout="@layout/include_main_card"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <!--侧滑菜单-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#fff"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:drawablePadding="15dp"
+            android:drawableTop="@drawable/icon_main_left_logo"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textColor="@color/main_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_margin="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/text_divider_color" />
+
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/ic_info_black_24dp"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/bg_card"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:text="关于"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/mainpage_textsize16sp" />
+
+        <ListView
+            android:id="@+id/lv_left_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:text="DrawerLayout" />
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.DrawerLayout>

@@ -18,6 +18,6 @@ public class SplashActivity extends Activity {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
             }
-        }, 2000);
+        }, 1500);
     }
 }

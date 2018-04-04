@@ -5,8 +5,6 @@
         <!-- Customize your theme here. -->
         <item name="android:actionBarStyle">@style/Main.MyActionBar</item>
         <item name="actionBarStyle">@style/Main.MyActionBar</item>
-
-
         <!--<item name="colorAccent">@color/colorAccent</item>-->
     </style>
 

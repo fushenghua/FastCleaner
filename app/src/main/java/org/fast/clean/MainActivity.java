@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import org.fast.clean.about.AboutActivity;
 import org.fast.clean.bean.SDCardInfo;
 import org.fast.clean.bean.StorageUtil;
 import org.fast.clean.similar.SimilarPhotoActivity;
@@ -24,10 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTvJunk;
 
     private TextView mTvPhoto;
-
-    static {
-        System.loadLibrary("native-lib");
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCapacity = (TextView) findViewById(R.id.capacity);
         mTvJunk = (TextView) findViewById(R.id.tv_junk);
         mTvPhoto = (TextView) findViewById(R.id.tv_photo);
+        findViewById(R.id.tv_about).setOnClickListener(this);
         mTvPhoto.setOnClickListener(this);
         mTvJunk.setOnClickListener(this);
     }
@@ -94,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tv_photo:
                 startActivity(new Intent(this, SimilarPhotoActivity.class));
+                break;
+            case R.id.tv_about:
+                startActivity(new Intent(this, AboutActivity.class));
                 break;
         }
     }
