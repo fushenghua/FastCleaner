@@ -24,14 +24,16 @@
 ### 使用方法
 
 
+#### similar photos
+
 ``` java
  private void initData() {
         mSimilarPhotosCleaner = new SimilarPhotosCleaner();
         mSimilarPhotosCleaner.setContext(this);
         mSimilarPhotosCleaner.setSimilarPhotoCallback(new SimilarPhotosCleaner.SimilarCallback() {
             @Override
-            public void onFoundItem(int i, int count) {
-                mTvProgress.setText(String.format(getResources().getString(R.string.similar_photos_search_txt), i, count));
+            public void onFoundItem(int index, int count) {
+                mTvProgress.setText(String.format(getResources().getString(R.string.similar_photos_search_txt), index, count));
             }
 
             @Override
