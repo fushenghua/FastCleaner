@@ -3,11 +3,11 @@
 * Similar Photos in the Android
 * Junk Clean
 
-![](https://raw.githubusercontent.com/fushenghua/FastCleaner/d6b3c6c1f813853e8ea576a5a1f4b9e5a62ef41f/img/fastcleanerPhone.png)
+![](https://github.com/fushenghua/FastCleaner/raw/master/img/fastcleanerPhone.png)
 
 #### 示例:
 
-![](https://raw.githubusercontent.com/fushenghua/FastCleaner/d6b3c6c1f813853e8ea576a5a1f4b9e5a62ef41f/img/fastcleaner.jpg)
+![](https://github.com/fushenghua/FastCleaner/raw/master/img/fastcleaner.jpg)
 
 ### 特性
 
