@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:src="@drawable/ico_clean"
@@ -34,6 +34,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.639" />
+        app:layout_constraintVertical_bias="0.553" />
 
 </android.support.constraint.ConstraintLayout>

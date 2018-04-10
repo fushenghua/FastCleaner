@@ -3,9 +3,25 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
         <item name="android:actionBarStyle">@style/Main.MyActionBar</item>
-        <item name="actionBarStyle">@style/Main.MyActionBar</item>
+        <!--<item name="actionBarStyle">@style/Main.MyActionBar</item>-->
+        <!-- 窗口的样式 -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <!--<item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+
+    <!-- toolbar菜单样式 -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!--<item name="actionMenuTextColor">@android:color/white</item>-->
+        <!--<item name="actionMenuTextAppearance">@style/ToolbarMenuTextSize</item>-->
+        <!--<item name="android:colorBackground"></item>也可以设置背景色以及menu中的其他属性-->
+        <!--<item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>-->
+        <!--<item name="android:itemBackground">@color/colorPrimary</item>-->
+        <!--<item name="android:layout_marginRight">10dp</item>-->
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="Normal_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -29,11 +45,16 @@
 
     <style name="Main.MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
         <item name="android:background">@android:color/white</item>
-        <item name="android:titleTextStyle">@style/Main.BarTitleText</item>
+        <!--<item name="android:titleTextStyle">@style/Main.BarTitleText</item>-->
         <item name="android:windowContentOverlay">@null</item>
         <!--&lt;!&ndash; support library compatibility &ndash;&gt;-->
+        <!--<item name="actionMenuTextAppearance">@style/Main.BarTitleText</item>-->
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/bg_card</item>
         <item name="background">@color/white</item>
-        <item name="titleTextStyle">@style/Main.BarTitleText</item>
+        <item name="titleTextAppearance">@style/Main.BarTitleText</item>
+        <!--<item name="titleTextStyle">@style/Main.BarTitleText</item>-->
     </style>
 
     <style name="Normal_MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
@@ -50,11 +71,12 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="Main.BarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+    <style name="Main.BarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@color/bg_card</item>
         <item name="android:background">@null</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textAllCaps">true</item>
+        <item name="titleTextColor">@color/bg_card</item>
     </style>
 
 
@@ -67,5 +89,12 @@
 
     <style name="AppTheme.Button" parent="Widget.AppCompat.Button">
         <item name="colorButtonNormal">@color/main_color</item>//按钮默认颜色
+    </style>
+
+    <style name="MyMenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!--<item name="android:colorBackground">#696969</item>-->
+        <item name="overlapAnchor">true</item><!-- 是否覆盖overflow按钮，默认为true，即盖住Toolbar -->
+        <!--<item name="android:popupBackground">?attr/colorPrimary</item>&lt;!&ndash;弹出菜单背景色为标题栏的背景色&ndash;&gt;-->
+        <!--<item name="android:dropDownVerticalOffset">0dip</item>&lt;!&ndash;弹出菜单与标题栏的垂直间距&ndash;&gt;-->
     </style>
 </resources>

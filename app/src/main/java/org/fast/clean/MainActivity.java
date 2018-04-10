@@ -1,9 +1,14 @@
 package org.fast.clean;
 
 import android.content.Intent;
-import android.os.Build;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -31,11 +36,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (Build.VERSION.SDK_INT >= 21) {
-            getSupportActionBar().setElevation(0);
-        }
+//        if (Build.VERSION.SDK_INT >= 21) {
+//            getSupportActionBar().setElevation(0);
+//        }
 
         this.initView();
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        ActionBar actionBar=getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+//            actionBar.setHomeAsUpIndicator(R.mipmap.ic_menu);
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, 0, 0);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+
     }
 
     @Override
@@ -46,14 +66,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
+        this.initMainView();
+        this.initDrawLayout();
+    }
+
+    private void initMainView() {
         mArcStore = (ArcProgress) findViewById(R.id.arc_store);
         mArcProcess = (ArcProgress) findViewById(R.id.arc_process);
         mCapacity = (TextView) findViewById(R.id.capacity);
         mTvJunk = (TextView) findViewById(R.id.tv_junk);
         mTvPhoto = (TextView) findViewById(R.id.tv_photo);
-        findViewById(R.id.tv_about).setOnClickListener(this);
+
         mTvPhoto.setOnClickListener(this);
         mTvJunk.setOnClickListener(this);
+    }
+
+    private void initDrawLayout() {
+        findViewById(R.id.tv_about).setOnClickListener(this);
+        Drawable info = getResources().getDrawable(R.drawable.ic_info_black_24dp);
+        DrawableCompat.setTint(info, getResources().getColor(R.color.bg_card));
+        info.setBounds(0, 0, info.getMinimumWidth(), info.getMinimumHeight());
+
+//        Drawable logoDrawable = getResources().getDrawable(R.drawable.icon_main_left_logo);
+//        DrawableCompat.setTint(logoDrawable, getResources().getColor(R.color.bg_card));
+//        logoDrawable.setBounds(0, 0, logoDrawable.getMinimumWidth(), logoDrawable.getMinimumHeight());
+        ((TextView) findViewById(R.id.tv_about)).setCompoundDrawables(info, null, null, null);
+//        ((TextView) findViewById(R.id.tv_logo)).setCompoundDrawables(null, logoDrawable, null, null);
     }
 
     private void initData() {

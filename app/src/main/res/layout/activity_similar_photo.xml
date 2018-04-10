@@ -5,16 +5,66 @@
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/text_divider_color"
     tools:context="org.fast.clean.similar.SimilarPhotoActivity">
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recylerView"
+    <LinearLayout
+        android:id="@+id/ll_reslut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="100.0MB"
+            android:textColor="@color/result_blue"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_result"
+            android:gravity="center"
+            android:text="可释放空间"
+            android:textColor="@color/bg_card"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/view_line1"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_below="@+id/tv_desc"
+            android:layout_margin="5dp"
+            android:background="@color/text_divider_color" />
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btn_delete"
-        android:background="@color/white" />
+        android:layout_below="@+id/ll_reslut"
+        android:padding="5dp"
+        android:paddingTop="2dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recylerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_delete"
